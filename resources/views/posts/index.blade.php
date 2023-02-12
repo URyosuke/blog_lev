@@ -21,7 +21,14 @@
                 </div>
             @endforeach
         </div>
-        {{ Auth::user()->name }}
+        {{ Auth::user()->name }}<br>
+        <div>
+            @foreach($questions as $question)
+                <a href="https://teratail.com/questions/{{ $question['id'] }}">
+                    {{ $question['title'] }}
+                    <br>
+            @endforeach
+        </div>
         <script>
             function deletePost(id) {
                 'use strict'
